@@ -1,0 +1,125 @@
+'''
+Experimento OK
+'''
+from multiprocessing import Pool, freeze_support, cpu_count
+from time import perf_counter
+from func import triplo
+import testLib
+
+
+def main():
+    with Pool() as pool:
+
+        F = pool.starmap(testLib.test_func,
+                         [(triplo, 1, '', 3),
+                          (triplo, 2, '', 6),
+                          (triplo, 3, '', 9),
+                          (triplo, 4, '',  12),
+                          (triplo, 5, '',  15),
+                          (triplo, 6, '',  18),
+                          (triplo, 7, '',  21),
+                          (triplo, 8, '',  24),
+                          (triplo, 9, '',  27),
+                          (triplo, 10, '',  30),
+                          (triplo, 11, '',  33),
+                          (triplo, 12, '',  36),
+                          (triplo, 13, '',  39),
+                          (triplo, 14, '',  42),
+                          (triplo, 15, '',  45),
+                          (triplo, 16, '',  48),
+                          (triplo, 17, '',  51),
+                          (triplo, 18, '',  54),
+                          (triplo, 19, '',  57),
+                          (triplo, 20, '',  60),
+                          (triplo, 21, '',  63),
+                          (triplo, 22, '',  66),
+                          (triplo, 23, '',  69),
+                          (triplo, 24, '',  72),
+                          (triplo, 25, '',  75),
+                          (triplo, 26, '',  78),
+                          (triplo, 27, '',  81),
+                          (triplo, 28, '',  84),
+                          (triplo, 29, '',  87),
+                          (triplo, 30, '',  90),
+                          (triplo, 31, '',  93),
+                          (triplo, 32, '',  96),
+                          (triplo, 33, '',  99),
+                          (triplo, 34, '',  102),
+                          (triplo, 35, '',  105),
+                          (triplo, 36, '',  108),
+                          (triplo, 37, '',  111),
+                          (triplo, 38, '',  114),
+                          (triplo, 39, '',  117),
+                          (triplo, 40, '',  120),
+                          (triplo, 41, '',  123),
+                          (triplo, 42, '',  126),
+                          (triplo, 43, '',  129),
+                          (triplo, 44, '',  132),
+                          (triplo, 45, '',  135),
+                          (triplo, 46, '',  138),
+                          (triplo, 47, '',  141),
+                          (triplo, 48, '',  144),
+                          (triplo, 49, '',  147),
+                          (triplo, 50, '',  150),
+                          (triplo, 51, '',  153),
+                          (triplo, 52, '',  156),
+                          (triplo, 53, '',  159),
+                          (triplo, 54, '',  162),
+                          (triplo, 55, '',  165),
+                          (triplo, 56, '',  168),
+                          (triplo, 57, '',  171),
+                          (triplo, 58, '',  174),
+                          (triplo, 59, '',  177),
+                          (triplo, 60, '',  180),
+                          (triplo, 61, '',  183),
+                          (triplo, 62, '',  186),
+                          (triplo, 63, '',  189),
+                          (triplo, 64, '',  192),
+                          (triplo, 65, '',  195),
+                          (triplo, 66, '',  198),
+                          (triplo, 67, '',  201),
+                          (triplo, 68, '',  204),
+                          (triplo, 69, '',  207),
+                          (triplo, 70, '',  210),
+                          (triplo, 71, '',  213),
+                          (triplo, 72, '',  216),
+                          (triplo, 73, '',  219),
+                          (triplo, 74, '',  222),
+                          (triplo, 75, '',  225),
+                          (triplo, 76, '',  228),
+                          (triplo, 77, '',  231),
+                          (triplo, 78, '',  234),
+                          (triplo, 79, '',  237),
+                          (triplo, 80, '',  240),
+                          (triplo, 81, '',  243),
+                          (triplo, 82, '',  246),
+                          (triplo, 83, '',  249),
+                          (triplo, 84, '',  252),
+                          (triplo, 85, '',  255),
+                          (triplo, 86, '',  258),
+                          (triplo, 87, '',  261),
+                          (triplo, 88, '',  264),
+                          (triplo, 89, '',  267),
+                          (triplo, 90, '',  270),
+                          (triplo, 91, '',  273),
+                          (triplo, 92, '',  276),
+                          (triplo, 93, '',  279),
+                          (triplo, 94, '',  282),
+                          (triplo, 95, '',  285),
+                          (triplo, 96, '',  288),
+                          (triplo, 97, '',  291),
+                          (triplo, 98, '',  294),
+                          (triplo, 99, '',  297),
+                          (triplo, 100, '',  300),
+                          ])
+
+
+if __name__ == "__main__":
+    testLib.init()
+    freeze_support()
+    start = perf_counter()
+    main()
+    finish = perf_counter()
+    testLib.end()
+    print(f'Finished in {round(finish - start, 3)} second(s)')
+    print('Numero de Cores: ' + str(cpu_count()))
